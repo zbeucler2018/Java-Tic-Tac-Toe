@@ -1,0 +1,92 @@
+
+
+Zack Beucler
+Final Project Proposal
+Data Structures
+
+
+Tic Tac Toe
+
+
+For my final project, I want to make a Tic Tac Toe game with a 2D array.  This game will have 2 players (both users) who will take turns placing their pieces until one player wins.
+
+Methods:
+
+startGame / continueGame{
+- used to start the game
+- can also be used to ask the users if they want to play again?
+	- potentially split this method into 2 different ones (startGame and continueGame)
+}
+
+
+showGameBoard void {
+- displays the board with ascii art and print statements
+
+Example code: 
+String[][] board = {{"1", "2", "3"\},
+                            {"4", "5", "6"},
+                            {"7", "8", "9"}
+         };
+    System.out.println("###################################################");
+    System.out.println(board[0][0] + " | " + board[0][1] + " | " + board[0][2]);
+    System.out.println("-----------");
+    System.out.println( board[1][0] + " | " + board[1][1] + " | " + board[1][2]);
+    System.out.println("-----------");
+    System.out.println(board[2][0] + " | " + board[2][1] + " | " + board[2][2]);
+    System.out.println("###################################################");
+
+Questions:
+- how to I indent the strings so the board is in the middle of the screen?
+}
+
+
+checkWinner String{
+- check for a winner
+Example code: 
+
+	// X horizontal
+    if (board[0][0] == board[0][1] == board[0][2] == "X") { return "X"; }
+    else if (board[1][0] == board[1][1] == board[1][2] == "X") { return "X"; }
+    else if (board[2][0] == board[2][1] == board[2][2] == "X") { return "X"; }
+        
+	// X vertical
+    else if (board[0][0] == board[1][0] == board[2][0] == "X") { return "X"; }
+    else if (board[0][1] == board[1][1] == board[2][1] == "X") { return "X"; }
+    else if (board[0][2] == board[1][2] == board[2][2] == "X") { return "X"; }
+
+	// X cross
+    else if (board[0][0] == board[1][1] == board[2][2] == "X") { return "X"; }
+    else if (board[0][2] == board[1][1] == board[2][0] == "X") { return "X"; }
+
+
+
+ ////////////////////////////////////////////////////////////////
+	// O horizontal
+     if (board[0][0] == board[0][1] == board[0][2] == "O") { return "O"; }
+    else if (board[1][0] == board[1][1] == board[1][2] == "O") { return "O"; }
+    else if (board[2][0] == board[2][1] == board[2][2] == "O") { return "O"; }
+	
+	 // X vertical
+    else if (board[0][0] == board[1][0] == board[2][0] == "O") { return "O"; }
+    else if (board[0][1] == board[1][1] == board[2][1] == "O") { return "O"; }
+    else if (board[0][2] == board[1][2] == board[2][2] == "O") { return "O"; }
+
+	// X cross
+    else if (board[0][0] == board[1][1] == board[2][2] == "O") { return "O"; }
+    else if (board[0][2] == board[1][1] == board[2][0] == "O") { return "O"; }
+
+////////////////////////////////////////////////////////////////\
+
+    else {return "None";} // nobody has won yet\
+
+Questions:
+- not sure if I should use ==, equals(), or compareTo()
+}
+
+
+getPlayerMove\{\
+- ask player what position they want to place their piece and insert it into the 2d array\
+- keep an array of available moves\
+- check if a move is valid?\
+	- could be its own method\
+}
